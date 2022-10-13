@@ -1,0 +1,10 @@
+<div class="filter__gallery" [routerLink]="'/movie/details/' + movie.id">
+  <div class="product__sidebar__view__item set-bg mix day years">
+    <img [src]="movie.large_cover_image" class="w-100 " />
+    <div class="ep">{{ movie.rating }} / ?</div>
+    <div class="view"><i class="fa fa-eye"></i> {{ movie.runtime }}</div>
+    <h5>
+      <a href="#">{{ movie.title }}</a>
+    </h5>
+  </div>
+</div>

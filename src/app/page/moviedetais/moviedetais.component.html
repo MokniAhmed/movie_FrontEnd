@@ -1,0 +1,77 @@
+<app-breadcrumb [genres]="movie.genres" [title]="movie.title"> </app-breadcrumb>
+<div *ngIf="isLoading == true"><app-preloader></app-preloader></div>
+<section class="anime-details spad" *ngIf="isLoading == false">
+  <div class="container">
+    <div class="anime__details__content">
+      <div class="row">
+        <div class="col-lg-3 w-100">
+          <img
+            class="img-fluid"
+            style="width: 100%; height: 100%"
+            [src]="movie.medium_cover_image"
+          />
+          <div class="comment">
+            <i class="fa fa-thumbs-up"></i> {{ movie.like_count }}
+          </div>
+          <div class="view">
+            <i class="fa fa-eye"></i>{{ movie.download_count + 500 }}
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="anime__details__text">
+            <div class="anime__details__title">
+              <h3>{{ movie.title_long }}</h3>
+              <span>{{ movie.slug }}</span>
+            </div>
+            <div class="anime__details__rating mb-2">
+              <app-rating [rating]="movie.rating"></app-rating>
+            </div>
+            <p>
+              {{ movie.description_full }}
+            </p>
+            <div class="anime__details__widget">
+              <div class="row">
+                <div class="col-lg-6 col-md-6">
+                  <ul>
+                    <li><span>Type:</span> TV Series</li>
+                    <li><span>Studios:</span> Lerche</li>
+                    <li>
+                      <span>Date aired:</span> {{ movie.date_uploaded | date }}
+                    </li>
+                    <li><span>year:</span> {{ movie.year }}</li>
+                    <li>
+                      <span>Genre:</span>
+                      <small *ngFor="let g of movie.genres">{{ g }} / </small>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <ul>
+                    <li><span>Duration:</span>{{ movie.runtime }} minutes</li>
+                    <li><span>Rating:</span>{{ rating }} /10</li>
+                    <li>
+                      <span>download_count:</span> {{ movie.download_count }}
+                    </li>
+                    <li><span>Quality:</span> HD / 720</li>
+                    <li><span>like_count:</span> {{ movie.like_count }}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="anime__details__btn">
+              <a
+                href="#"
+                class="follow-btn"
+                *ngFor="let t of movie.torrents"
+                [href]="t.url"
+                download
+              >
+                <span>{{ t.quality }} <i class="fas fa-download"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

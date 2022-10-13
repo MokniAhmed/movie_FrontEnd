@@ -1,0 +1,24 @@
+img {
+  width: 100%;
+  height: 100%;
+}
+.new {
+  font-size: 13px;
+  color: #ffffff;
+  background: #ff1e00;
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 4px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.product__item {
+  cursor: pointer;
+}
+.product__item:hover {
+  transform: scale(1.05);
+
+  transition-duration: 0.5s;
+}

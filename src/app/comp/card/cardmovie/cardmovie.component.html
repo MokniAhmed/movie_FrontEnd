@@ -1,0 +1,19 @@
+<div class="product__item bb" [routerLink]="'/movie/details/' + movies.id">
+  <div class="product__item__pic set-bg">
+    <img [src]="movies.large_cover_image" />
+    <div class="ep">{{ movies.rating }}/ 10</div>
+    <div class="new" *ngIf="movies.year > 2020">New</div>
+    <div class="comment">
+      <i class="fas fa-file-download"></i> {{ movies.runtime }}
+    </div>
+    <div class="view"><i class="far fa-thumbs-up"></i> {{ y }}</div>
+  </div>
+  <div class="product__item__text px-3">
+    <ul>
+      <li *ngFor="let c of movies.genres">{{ c }}</li>
+    </ul>
+    <h5>
+      <a href="#">{{ movies.title_long }} </a>
+    </h5>
+  </div>
+</div>

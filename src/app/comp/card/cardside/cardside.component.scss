@@ -1,0 +1,14 @@
+.filter__gallery :hover {
+  transition-duration: 1s;
+  transform: scale(1.005);
+  img {
+    filter: grayscale(110%) blur(1px);
+  }
+  h5 {
+    transform: scale(2);
+    text-align: center;
+  }
+}
+.filter__gallery {
+  cursor: pointer;
+}

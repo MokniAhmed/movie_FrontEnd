@@ -1,0 +1,56 @@
+.middle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.bar {
+  width: 20px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.425);
+  display: inline-block;
+  transform-origin: bottom center;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  /*   box-shadow:5px 10px 20px inset rgba(255,23,25.2); */
+  animation: loader 1s linear infinite;
+}
+.bar1 {
+  animation-delay: 0.05s;
+}
+.bar2 {
+  animation-delay: 0.10s;
+}
+.bar3 {
+  animation-delay: 0.15s;
+}
+.bar4 {
+  animation-delay: 0.2s;
+}
+.bar5 {
+  animation-delay: 0.25s;
+}
+.bar6 {
+  animation-delay: 0.3s;
+}
+.bar7 {
+  animation-delay: 0.35s;
+}
+.bar8 {
+  animation-delay: 0.4s;
+}
+
+@keyframes loader {
+  0% {
+    transform: scaleY(0.01);
+    background: rgba(153, 205, 50, 0.116);
+  }
+  50% {
+    transform: scaleY(1);
+    background: rgb(50, 161, 205);
+  }
+  100% {
+    transform: scaleY(0.01);
+    background: transparent;
+  }
+}
